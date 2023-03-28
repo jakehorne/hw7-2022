@@ -54,6 +54,16 @@ document.querySelector("#mute").addEventListener("click", function() {
 document.querySelector("#slider").addEventListener("click", function() {
 	var vol = document.getElementById("slider").value / 100;
 	video.volume = vol;
-	document.getElementById("slider").innerHTML = (video.volume * 100) + "%"
-	console.log("The current volume is : " + (video.volume * 100) + "%")
+	document.getElementById("slider").innerHTML = (video.volume * 100) + "%";
+	console.log("The current volume is : " + (video.volume * 100) + "%");
+});
+
+document.querySelector("#vintage").addEventListener("click", function() {
+	video.classList.add("oldSchool");
+	console.log("Switching to old school")
+});
+
+document.querySelector("#orig").addEventListener("click", function() {
+	video.classList.remove("oldSchool");
+	console.log("Switching to original")
 });
