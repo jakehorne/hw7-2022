@@ -52,9 +52,8 @@ document.querySelector("#mute").addEventListener("click", function() {
 });
 
 document.querySelector("#slider").addEventListener("click", function() {
-	var vol = document.getElementById("slider").value / 100;
-	video.volume = vol;
-	document.getElementById("slider").innerHTML = (video.volume * 100) + "%";
+	video.volume = document.getElementById("slider").value / 100;
+	document.getElementById("volume").innerHTML = (video.volume * 100) + '%';
 	console.log("The current volume is : " + (video.volume * 100) + "%");
 });
 
