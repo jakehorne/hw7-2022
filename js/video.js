@@ -27,3 +27,33 @@ document.querySelector("#faster").addEventListener("click", function() {
 	video.playbackRate = video.playbackRate * 1.111;
 	console.log("The playback spped is now: " + video.playbackRate);
 });
+
+document.querySelector("#skip").addEventListener("click", function() {
+	if (video.currentTime + 10 < video.duration) {
+		video.currentTime += 10;
+	}
+	else {
+		video.currentTime = 0;
+	}
+	console.log("The current video time location is: " + video.currentTime);
+});
+
+document.querySelector("#mute").addEventListener("click", function() {
+	if (video.muted) {
+		video.muted = false;
+		console.log("The video is not muted");
+		document.querySelector("#mute").innerHTML = "Mute";
+	}
+	else {
+		video.muted = true;
+		console.log("The video is muted");
+		document.querySelector("#mute").innerHTML = "Unmute";
+	}
+});
+
+document.querySelector("#slider").addEventListener("click", function() {
+	var vol = document.getElementById("slider").value / 100;
+	video.volume = vol;
+	document.getElementById("slider").innerHTML = (video.volume * 100) + "%"
+	console.log("The current volume is : " + (video.volume * 100) + "%")
+});
